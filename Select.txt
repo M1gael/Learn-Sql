@@ -1,0 +1,29 @@
+/*
+A SELECT statement retrieves information from the database. Using a SELECT statement, you can do the 
+following:
+• Projection: You can use the projection capability in SQL to choose the columns in a table that you 
+want returned by your query. You can choose as few or as many columns of the table as you require. 
+• Selection: You can use the selection capability in SQL to choose the rows in a table that you want 
+returned by a query. You can use various criteria to restrict the rows that you see.
+• Joining: You can use the join capability in SQL to bring together data that is stored in different tables 
+by creating a link between them. You learn more about joins in a later lesson
+
+SELECT *|{[DISTINCT] column|expression [alias],...}
+FROM table;
+• SELECT identifies what columns
+• FROM identifies which table
+
+*/
+
+SELECT department_id, department_name, manager_id, location_ id
+FROM departments;
+
+
+==Remember==
+• SQL statements are not case sensitive, unless indicated.
+• SQL statements can be entered on one or many lines.
+• Keywords cannot be split across lines or abbreviated.
+• Clauses are usually placed on separate lines for readability and ease of editing.
+• Indents should be used to make code more readable.
+• Keywords typically are entered in uppercase; all other words, such as table names and columns, are 
+entered in lowercase.
