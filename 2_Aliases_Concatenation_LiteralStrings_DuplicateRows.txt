@@ -1,0 +1,50 @@
+=Defining a Column Alias=
+-Renames a column heading
+-Requires double quotation marks if it contains 
+spaces or special characters or is case sensitive
+
+EXAMPLES:
+SELECT last_name AS name, commission_pct comm FROM employees;
+
+SELECT last_name "Name", salary*12 "Annual Salary" FROM employees;
+                    Notice that the optional "AS" keyword has been used before the column alias name)
+
+
+
+==Concatenation Operator==
+-Concatenates columns or character strings to other columns 
+-Is represented by two vertical bars (||)
+-Creates a resultant column that is a character expression
+
+EXAMPLES:
+SELECT last_name||job_id AS "Employees" FROM employees;
+
+
+
+==Literal Character Strings==
+-A literal value is a character, a number, or a date included in the SELECT list.
+-Date and character literal values must be enclosed within single quotation marks ('').
+-Each character string is output once for each row returned.
+
+EXAMPLES:
+SELECT last_name ||' is a '||job_id AS "Employee Details" FROM employees;
+
+OUTPUT:
+King is a AD_PRES
+
+
+
+==Duplicate Rows==
+Unless you indicate otherwise, iSQL*Plus displays the results of a query without eliminating duplic ate 
+rows. The example on the slide displays all the department numbers from the EMPLOYEES table. Notice 
+that the department numbers are repeated.
+
+=Eliminating Duplicate Rows=
+To eliminate duplicate rows in the result, include the DISTINCT keyword in the SELECT clause 
+immediately after the SELECT keyword.
+In the example on the slide, the EMPLOYEES table actually contains 20 rows but there are only seven unique department numbers in the table. 
+You can specify multiple columns after the DISTINCT qualifier. The DISTINCT qualifier affects all the 
+selected columns, and the result is every distinct combination of the columns.
+
+EXAMPLE:
+SELECT DISTINCT department_id, job_id FROM employees;
